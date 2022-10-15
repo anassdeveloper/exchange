@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    font-family: 'Work Sans', sans-serif;
+    height: 100vh;
+    position: relative;
+}
+
+
+.app h2{
+    display: flex;
+    align-items: center;
+    color: rgb(54, 180, 54);
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.app_overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0 0 0 / 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    
+    
+}
+.app .app_overlay img{
+    animation: img .5s ease 0s infinite;
+}
+.app_overlay h2{
+    color: #fff;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    text-align: center;
+    line-height: 1.5;
+}
+.app_overlay p{
+    font-size: 20px;
+    color: #11F724;
+}
+@keyframes img {
+    to{
+        transform: scale(1.1);
+    }
+}
+
+.money{
+    position: relative;
+    background-color: #9BF711;
+    width: 100vw;
+    max-width: 60rem;
+    margin: 30px auto;
+    padding: 20px 30px;
+    border-radius: 4px;
+}
+@media (max-width:617px){
+    .money{
+        margin: 0;
+        padding-bottom: 100px;
+    }
+}
+.money h2{
+    margin-bottom: 30px;
+}
+.input_search{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+   
+}
+.input_search select,
+.input_search input{
+    border-radius: 4px;
+    border: 1px solid #20B2F8;
+}
+.input_search select{
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 23px;
+    text-transform: uppercase;
+    color: #20B2F8;
+}
+@media (max-width:617px){
+  .input_search select{
+    margin: 10px 0 0;
+    width: 85%;
+    font-size: 18px;
+  }
+}
+.input_search select:focus{
+    outline-color: green;
+    outline-offset: 2px;
+}
+.input_search .box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.input_search .box input{
+    padding: 10px 17px;
+    font-size: 22px;
+    outline-color: #20B2F8;
+    color: #11F724;
+}
+
+.input_search .box input::placeholder{
+    color: #20B2F8;
+}
+
+
+@media (max-width:617px){
+    .input_search .box input{
+        font-size: 18px;
+    }
+}
+
+.money button:last-child{
+    font-size: 22px;
+    cursor: pointer;
+    pointer-events: none;
+    padding: 10px 25px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    background: #20B2F8;
+    color: #fff;
+}
+
+.money button:last-child:hover,
+.money button:last-child:focus{
+    background-color: #11F724;
+    outline:2px solid #11F724 ;
+    outline-offset: 2px;
+}
+
+@media (max-width:617px){
+    .money button:last-child{
+        display: block;
+        font-size: 18px;
+        margin: 20px auto;
+        transform: translateX(-20px);
+    }
+}
+
+.money .loader{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #E2ED11;
+  top: 0;
+  left: 0;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.money .loader span{
+    height: 120px;
+    width: 120px;
+    border-color: green;
+    border-width:5px 5px 5px 0 ;
+    border-style: solid;
+    border-radius: 50%;
+    animation: loader .5s ease 0s infinite forwards;
+    
+}
+.money .loader b{
+    position: absolute;
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+}
+@keyframes loader {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.result{
+    margin: 20px;
+}
+.result span{
+    font-size: 24px;
+    position: relative;
+    color: #7576F0;
+}
+/*
+  .result span::before{
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+*/
+.result{
+    position: relative;
+}
+.result b{
+    font-size: 35px;
+    display: block;
+    margin-top: 20px;
+    position: relative;
+    color: #20B2F8;
+}
+
+.result b::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: orangered;
+    border-radius: 50%;
+    position: absolute;
+    left: -16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.result p:first-of-type{
+    font-size: 22px;
+    direction: rtl;
+    margin-top: 20px;
+    color: #7576F0;
+    font-weight: bold;
+}
+.result p:last-of-type{
+    font-size: 23px;
+    margin-top: 10px;
+    color: #fff;
+    text-shadow: 1px 1px 1px 0 rgb(0 0 0 / 70%);
+}
+.result h4{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -100px;
+    width: 200px;
+    color: #7576F0;
+    text-align: center;
+}
